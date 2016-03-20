@@ -13,13 +13,15 @@ class Module implements ModuleDefinitionInterface
 
     public function registerAutoloaders(DiInterface $dependencyInjector = null)
     {
+
     }
 
     public function registerServices(DiInterface $di)
     {
         $di->get('dispatcher')->setDefaultNamespace('App\Web\Frontend\Controllers');
         $di->get('view')
-            ->setMainView('frontend/main');
+            ->setViewsDir(ROOT . '/app/views/frontend/')
+            ->setMainView('main');
         return $di;
     }
 

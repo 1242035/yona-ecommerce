@@ -3,11 +3,11 @@
 /**
  * @author Oleksandr Torosh <webtorua@gmail.com>
  */
-namespace App\Web\Frontend\Routes;
+namespace App\Web\Frontend\RouterGroups;
 
 use Phalcon\Mvc\Router\Group;
 
-class FrontendIndexGroup extends Group
+class FrontendIndex extends Group
 {
 
     public function __construct()

@@ -54,9 +54,8 @@ class Application extends \Phalcon\Mvc\Application
         $loader->register();
 
         $di->get('view')
-            ->setViewsDir(ROOT . '/app/views/')
-            ->setLayoutsDir('../layouts')
-            ->setPartialsDir('../partials');
+            ->setLayoutsDir('../layouts/')
+            ->setPartialsDir('../partials/');
 
         $di->set('router', new \App\Web\Router());
 

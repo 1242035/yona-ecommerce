@@ -3,11 +3,11 @@
 /**
  * @author Oleksandr Torosh <webtorua@gmail.com>
  */
-namespace App\Web\Dashboard\Routes;
+namespace App\Web\Dashboard\RouterGroups;
 
 use Phalcon\Mvc\Router\Group;
 
-class DashboardIndexGroup extends Group
+class DashboardIndex extends Group
 {
 
     public function __construct()
@@ -19,7 +19,7 @@ class DashboardIndexGroup extends Group
 
         $this->setPrefix('/dashboard');
 
-        $this->addGet('', ['index'])
+        $this->addGet('', 'index')
             //    ->beforeMatch([new AjaxFilter(), 'check'])
         ;
     }

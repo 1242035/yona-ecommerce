@@ -5,9 +5,8 @@
  */
 namespace App\Web;
 
-
-use App\Web\Dashboard\Routes\DashboardIndexGroup;
-use App\Web\Frontend\Routes\FrontendIndexGroup;
+use App\Web\Dashboard\RouterGroups\DashboardIndex;
+use App\Web\Frontend\RouterGroups\FrontendIndex;
 
 class Router extends \Phalcon\Mvc\Router
 {
@@ -21,10 +20,10 @@ class Router extends \Phalcon\Mvc\Router
         $this->setDefaultAction('index');
 
         // Frontend
-        $this->mount(new FrontendIndexGroup());
+        $this->mount(new FrontendIndex());
 
         // Dashboards
-        $this->mount(new DashboardIndexGroup());
+        $this->mount(new DashboardIndex());
     }
 
 }
