@@ -1,0 +1,3 @@
+Dashboard
+
+{{ get_content() }}

@@ -1,0 +1,3 @@
+Frontend
+
+{{ get_content() }}

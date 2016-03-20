@@ -3,7 +3,7 @@
 /**
  * @author Oleksandr Torosh <webtorua@gmail.com>
  */
-namespace App\Web;
+namespace App\Cli;
 
 class Application
 {
