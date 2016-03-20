@@ -1,0 +1,16 @@
+{
+  "name": "yona-ecommerce",
+  "dependencies": {
+    "less": "*",
+    "jquery": "*",
+    "html5shiv": "*",
+    "respond": "*",
+    "semantic": "2.*",
+    "lodash": "*",
+    "font-awesome": "*",
+    "toastr": "*",
+    "zeroclipboard": "*",
+    "hideshowpassword": "*",
+    "history.js": "*"
+  }
+}

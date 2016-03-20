@@ -1,0 +1,44 @@
+{
+  "name": "oleksandr-torosh/yona-ecommerce",
+  "version": "0.0.1",
+  "title": "Yona E-commerce",
+  "description": "E-commerce engine for Phalcon PHP Framework",
+  "type": "project",
+  "keywords": [
+    "phalcon",
+    "e-commerce",
+    "shop",
+    "yona",
+    "php",
+    "cms"
+  ],
+  "homepage": "https://github.com/oleksandr-torosh/yona-ecommerce",
+  "author": {
+    "name": "Oleksandr Torosh",
+    "url": "https://www.facebook.com/oleksandrtorosh"
+  },
+  "maintainers": [
+    {
+      "name": "Oleksandr Torosh",
+      "url": "https://www.facebook.com/oleksandrtorosh"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oleksandr-torosh/yona-ecommerce"
+  },
+  "bugs": "https://github.com/oleksandr-torosh/yona-ecommerce/issues",
+  "license": "BSD-3-Clause",
+  "autoload": {
+    "psr-4": {
+      "Yona\\": "core/Yona/"
+    }
+  },
+  "require": {
+    "php": ">=5.5",
+    "ext-intl": "*",
+    "ext-phalcon": ">=2.0.7",
+    "guzzlehttp/guzzle": "~6.0",
+    "robmorgan/phinx": "dev-master"
+  }
+}
