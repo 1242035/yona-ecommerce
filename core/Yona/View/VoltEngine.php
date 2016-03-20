@@ -14,7 +14,7 @@ class VoltEngine extends Volt
     {
         parent::__construct($view, $dependencyInjector);
 
-        $this->setOptions(['compiledPath' => ROOT . 'storage/volt']);
+        $this->setOptions(['compiledPath' => ROOT . 'storage/volt/']);
         $this->getCompiler()
             ->addFunction('getenv', function ($resolvedArgs, $exprArgs) {
                 return 'getenv(' . $resolvedArgs . ')';
