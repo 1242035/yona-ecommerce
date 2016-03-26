@@ -53,8 +53,9 @@ return [
             ],
         ],
     ],
+    'router'        => '\App\Web\Router',
     'view'          => '\Yona\View',
-    //'acl'           => '\Yona\Plugin\AclPlugin',
+    'acl'           => '\Yona\Acl',
     'session'       => [
         'default'  => getenv('SESSION_ADAPTER'),
         'adapters' => [
@@ -136,7 +137,10 @@ return [
             ],
         ],
     ],
-    'modelsCache'   => ['type' => 'service', 'name' => 'cache'],
+    'modelsCache'   => [
+        'type' => 'service',
+        'name' => 'cache'
+    ],
     'debug'         => '\Phalcon\Debug',
     'userSession'   => [
         'className' => '\Phalcon\Session\Bag',
@@ -144,9 +148,27 @@ return [
             ['type' => 'parameter', 'value' => 'user'],
         ],
     ],
+    'url'           => [
+        'className' => '\Phalcon\Mvc\Url',
+        'calls'     => [
+            [
+                'method'    => 'setBaseUri',
+                'arguments' => [
+                    [
+                        'type'  => 'parameter',
+                        'value' => getenv('BASE_URI')
+                    ]
+                ]
+            ]
+        ]
+    ],
 
     // Application Helpers
 
     // Custom services
+    'filesystem'    => function ($di) {
+        $adapter = new \League\Flysystem\Adapter\Local(ROOT . getenv('FILESYSTEM_REL_PATH'));
+        return new \League\Flysystem\Filesystem($adapter);
+    },
 
 ];

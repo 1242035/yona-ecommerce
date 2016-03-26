@@ -19,6 +19,8 @@ class View extends \Phalcon\Mvc\View
             '.phtml' => new PhpEngine($this, $this->getDI()),
             '.volt'  => new VoltEngine($this, $this->getDi()),
         ]);
+        $this->setLayoutsDir('../layouts/');
+        $this->setPartialsDir('../partials/');
     }
 
 }

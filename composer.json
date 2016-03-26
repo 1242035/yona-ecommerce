@@ -32,7 +32,11 @@
   "autoload": {
     "psr-4": {
       "Yona\\": "core/Yona/",
-      "App\\Web\\": "app/applications/Web/"
+      "App\\Web\\": "app/applications/Web/",
+      "App\\Web\\Plugins\\": "app/applications/Web/plugins/",
+      "App\\Web\\Exceptions\\": "app/applications/Web/exceptions/",
+      "App\\Cli\\": "app/applications/Cli/",
+      "App\\Api\\": "app/applications/Api/"
     }
   },
   "require": {
@@ -41,6 +45,7 @@
     "ext-phalcon": ">=2.0.7",
     "vlucas/phpdotenv": "*",
     "guzzlehttp/guzzle": "~6.0",
-    "robmorgan/phinx": "dev-master"
+    "robmorgan/phinx": "dev-master",
+    "league/flysystem": "dev-master"
   }
 }

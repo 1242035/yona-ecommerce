@@ -13,9 +13,9 @@ class Application extends \Phalcon\Mvc\Application
 
     public function run()
     {
-        $dotenv = new \Dotenv\Dotenv(ROOT . 'config');
+        $dotenv = new \Dotenv\Dotenv(ROOT . 'config/env');
         $dotenv->load();
-        $dotenv->required(include ROOT . 'config/.env.required.php');
+        $dotenv->required(include ROOT . 'config/env/.env.required.php');
 
         $di = new \Phalcon\DI\FactoryDefault();
 
@@ -26,15 +26,16 @@ class Application extends \Phalcon\Mvc\Application
         // Error Handling
         //$di->get('eventsManager')->attach('dispatch', $di->get('errorHandler'));
         // Acl
-        //$di->get('eventsManager')->attach('dispatch', $di->get('acl'));
-        // Tag
+        $di->get('eventsManager')->attach('dispatch', $di->get('acl'));
 
+        // Phalcon Tag
         \Phalcon\Tag::setTitleSeparator(" - ");
         \Phalcon\Tag::setTitle(getenv('WEBSITE_TITLE'));
 
+        // Set Application DI
         $this->setDI($di);
 
-        //Register the installed modules
+        //Register modules
         $this->registerModules([
             'frontend'  => [
                 'className' => 'App\Web\Frontend\Module',
@@ -46,23 +47,15 @@ class Application extends \Phalcon\Mvc\Application
             ],
         ]);
 
+        // Register modules namespaces
         $loader = new Loader();
         $loader->registerNamespaces([
-            'App\Web\Dashboard' => __DIR__ . '/Dashboard',
-            'App\Web\Frontend'  => __DIR__ . '/Frontend',
+            'App\Web\Dashboard' => __DIR__ . '/modules/Dashboard',
+            'App\Web\Frontend'  => __DIR__ . '/modules/Frontend',
         ]);
         $loader->register();
 
-        $di->get('view')
-            ->setLayoutsDir('../layouts/')
-            ->setPartialsDir('../partials/');
-
-        $di->set('router', new \App\Web\Router());
-
-        $di->get('url')->setBaseUri(getenv('BASE_URI'));
-
         echo $this->handle()->getContent();
-
     }
 
 }
