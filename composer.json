@@ -28,10 +28,11 @@
     "url": "https://github.com/oleksandr-torosh/yona-ecommerce"
   },
   "bugs": "https://github.com/oleksandr-torosh/yona-ecommerce/issues",
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "Yona\\": "core/Yona/",
+      "App\\Models\\": "app/models/",
       "App\\Web\\": "app/applications/Web/",
       "App\\Web\\Plugins\\": "app/applications/Web/plugins/",
       "App\\Web\\Exceptions\\": "app/applications/Web/exceptions/",
