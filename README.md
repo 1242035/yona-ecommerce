@@ -13,7 +13,7 @@ E-commerce CMF based on Phalcon PHP Framework
 ## Installation
 
 ```php
-git clone git@githubcom:oleksandr-torosh/yona-ecommerce.git
+git clone git@github.com:oleksandr-torosh/yona-ecommerce.git
 cd yona-ecommerce
 composer install
 bower install
